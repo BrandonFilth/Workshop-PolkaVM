@@ -4,7 +4,7 @@
 ## Paso 1: Crea un Nuevo Codespace
 
 Inicia el proceso creando un nuevo Codespace.
-
+![codespace](/imagenes/codespace-codespace.png)
 
 ---
 
