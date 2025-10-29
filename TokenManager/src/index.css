@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 340 100% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 267 90% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 231 14% 50%;
+    --muted-foreground: 231 14% 35%;
+
+    --accent: 180 100% 51%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 340 100% 57%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 231 14% 85%;
+    --input: 231 14% 85%;
+    --ring: 340 100% 57%;
+
+    --radius: 1rem;
+
+    --glass-bg: 0 0% 100%;
+    --glass-border: 231 14% 90%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(340 100% 57%) 0%, hsl(267 90% 52%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(180 100% 51%) 0%, hsl(67 100% 51%) 100%);
+    --gradient-destructive: linear-gradient(135deg, hsl(340 100% 57%) 0%, hsl(0 100% 50%) 100%);
+    
+    /* Polkadot Glass Mint specific colors */
+    --polkadot-pink: 340 100% 60%;
+    --polkadot-violet: 267 90% 52%;
+    --polkadot-cyan: 180 100% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-unbounded;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-2xl border-0 shadow-lg;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 backdrop-blur-xl border-0 text-foreground placeholder:text-muted-foreground;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .float-animation-delayed {
+    animation: float 6s ease-in-out 1s infinite;
+  }
+  
+  .float-animation-delayed-2 {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+  
+  .bg-polkadot-pink {
+    background-color: hsl(var(--polkadot-pink));
+  }
+  
+  .text-polkadot-violet {
+    color: hsl(var(--polkadot-violet));
+  }
+  
+  .bg-polkadot-cyan {
+    background-color: hsl(var(--polkadot-cyan));
+  }
+  
+  .hover\:bg-polkadot-pink\/90:hover {
+    background-color: hsl(var(--polkadot-pink) / 0.9);
+  }
+  
+  .hover\:bg-polkadot-cyan\/90:hover {
+    background-color: hsl(var(--polkadot-cyan) / 0.9);
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
