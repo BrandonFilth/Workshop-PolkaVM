@@ -14,7 +14,8 @@ Una vez en el Codespace, navega al la terminal del proyecto e instala las depend
 
 1.  Abre la terminal.
 2.  Ejecuta: `cd TokenManager/`
-3.  Ejecuta: `npm install`
+3.  Ejecuta: `nvm install -lts`
+4.  Ejecuta: `npm install`
    
 ![codespace](/imagenes/codespace-npm-install.png)
 
